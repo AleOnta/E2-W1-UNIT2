@@ -16,6 +16,10 @@ hr {
   display: none;
 } /* rimuove l'elemento */
 
+i {
+  color: #a0a0a0;
+}
+
 /* HEADER */
 header {
   background: rgb(0, 160, 198);
@@ -27,6 +31,9 @@ header {
   box-shadow: 0 3px 3px #444;
   margin-bottom: 1.5em;
   padding: 2em 1.5em;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 @media screen and (min-width: 800px) {
@@ -99,7 +106,7 @@ main {
 
 section {
   background-color: #e3e3e3;
-  padding: 1.5em 1em;
+  padding: 3em 1.2em;
   margin-bottom: 2em;
   position: relative;
 }
@@ -107,11 +114,15 @@ section {
 section h2 {
   text-align: center;
   color: #333;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   margin-bottom: 1.7rem;
   font-weight: bold;
   background-color: #a3a3a3;
-  padding: 0px 1em;
+  padding: 0.2em 1.2em;
+  position: absolute;
+  top: -27px;
+  text-transform: uppercase;
+  box-shadow: 0 3px 3px #444;
 }
 
 /* ELEMENTI NEL MAIN - ARTICLE */
@@ -121,7 +132,16 @@ h1 {
   line-height: 1.2;
   font-weight: bold;
   letter-spacing: -0.03em;
+}
+
+article p:first-of-type {
+  color: #a0a0a0;
+}
+
+#underline_decoration {
+  position: relative;
   margin-bottom: 0.7em;
+  z-index: 1;
 }
 
 p,
@@ -146,7 +166,6 @@ h1 + p {
 
   h2 {
     font-size: 1.8rem;
-    font-weight: 700;
   }
 }
 
@@ -158,18 +177,21 @@ h1 + p {
   p,
   ul,
   ol {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   h2 {
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: 1.2rem;
   }
 }
 
 @media screen and (min-width: 700px) {
   h1 {
     font-size: 3.6rem;
+  }
+
+  h2 {
+    font-weight: 700;
   }
 }
 
@@ -180,6 +202,15 @@ h1 + p {
   section {
     border-radius: 20px;
   }
+
+  h2 {
+    font-weight: 700;
+  }
+
+  section h2 {
+    padding: 0em 0.8em;
+    font-size: 2rem;
+  }
 }
 
 .imgLeft {
@@ -187,12 +218,21 @@ h1 + p {
   border: 4px solid #00a0c6;
   outline: 4px solid #a02571;
   padding: 3px;
+  float: left;
+}
+
+@media screen and (min-width: 500px) {
+  .imgLeft {
+    width: 80px;
+    height: 80px;
+  }
 }
 ul,
 ol {
   margin-left: 2em;
 }
-a {
+p a,
+aside a {
   color: #00a0c6;
   font-weight: bold;
 }
@@ -230,11 +270,7 @@ iframe {
 table {
   margin-bottom: 2em;
 }
-@media screen and (min-width: 500px) {
-  table {
-    margin: 0 auto 2em;
-  }
-}
+
 @media screen and (min-width: 700px) {
   table {
     width: 70%;
@@ -270,6 +306,10 @@ tbody tr:last-of-type {
 }
 
 /* FORM */
+section p:first-of-type {
+  color: black;
+}
+
 input {
   padding: 5px;
   border: 0;
@@ -285,12 +325,13 @@ button {
 @media screen and (min-width: 500px) {
   input {
     display: inline-block;
-    width: 70%;
+    width: 50%;
   }
 }
 @media screen and (min-width: 700px) {
   input {
     padding: 15px;
+    width: 70%;
   }
   button {
     padding: 15px 30px;
@@ -311,6 +352,19 @@ aside div {
   border: 1px solid #c3c3c3;
   margin-bottom: 1em;
   padding: 1em;
+  position: relative;
+}
+
+.fa-calendar-alt {
+  color: black;
+}
+
+.fa-tag {
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 50px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -354,6 +408,70 @@ footer a {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+/* INTERACTIVE BUTTONS */
+.interactive-buttons {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid white;
+  box-shadow: 0 2px 2px #444;
+  display: inline-block;
+  z-index: 3;
+  border-radius: 20%;
+}
+
+.interactive-buttons a {
+  color: #3f6bca;
+}
+
+.interactive-buttons i {
+  font-size: 2em;
+  padding: 0.2em;
+  color: #3f6bca;
+}
+
+.fa-caret-square-up {
+  color: #a02571 !important;
+}
+
+@media screen and (max-width: 699px) {
+  #adds-icon {
+    position: fixed;
+    bottom: 7.6em;
+    right: 0;
+  }
+
+  #adds-calendar {
+    position: fixed;
+    bottom: 4.3em;
+    right: 0;
+  }
+
+  #sort-up {
+    position: fixed;
+    bottom: 1em;
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #adds-icon {
+    position: fixed;
+    top: 1em;
+    right: 0;
+  }
+
+  #adds-calendar {
+    position: fixed;
+    top: 4.3em;
+    right: 0;
+  }
+
+  #sort-up {
+    position: fixed;
+    bottom: 1em;
+    right: 0;
   }
 }
 
