@@ -125,6 +125,18 @@ section h2 {
   box-shadow: 0 3px 3px #444;
 }
 
+@media screen and (min-width: 700px) {
+  section {
+    padding: 4em 1.2em;
+  }
+
+  section h2 {
+    font-size: 2rem;
+    padding: 0 1.3em;
+    margin-left: 0.5em;
+  }
+}
+
 /* ELEMENTI NEL MAIN - ARTICLE */
 
 h1 {
@@ -190,6 +202,16 @@ h1 + p {
     font-size: 3.6rem;
   }
 
+  p,
+  ul,
+  ol {
+    font-size: 1.2rem;
+  }
+
+  article > h2 {
+    font-size: 1.4rem;
+  }
+
   h2 {
     font-weight: 700;
   }
@@ -221,12 +243,6 @@ h1 + p {
   float: left;
 }
 
-@media screen and (min-width: 500px) {
-  .imgLeft {
-    width: 80px;
-    height: 80px;
-  }
-}
 ul,
 ol {
   margin-left: 2em;
@@ -276,6 +292,7 @@ table {
     width: 70%;
     margin-block-start: 5rem;
     margin-block-end: 6rem;
+    margin: 3.5em auto 5em;
   }
 }
 
@@ -364,7 +381,7 @@ aside div {
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 50px;
+  font-size: 60px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -388,13 +405,23 @@ footer {
   color: #f0f0f0;
   padding: 1em;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width: 700px) {
+  footer {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (min-width: 800px) {
   footer {
     padding: 1em 12em;
   }
+}
+
+footer p:first-of-type {
+  font-size: 1.4rem;
 }
 
 footer a {
