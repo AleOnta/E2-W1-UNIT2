@@ -225,6 +225,14 @@ h1 + p {
     border-radius: 20px;
   }
 
+  h1 {
+    font-size: 3.4rem;
+  }
+
+  #underline_decoration {
+    left: 55%;
+  }
+
   h2 {
     font-weight: 700;
   }
@@ -274,11 +282,12 @@ iframe {
     display: inline-block;
     width: 50%;
     margin-inline: -2px;
+    margin-top: 3em;
     vertical-align: middle;
   }
 
   iframe {
-    height: 267px;
+    height: 273px;
   }
 }
 
@@ -293,6 +302,15 @@ table {
     margin-block-start: 5rem;
     margin-block-end: 6rem;
     margin: 3.5em auto 5em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  table {
+    width: 70%;
+    margin-block-start: 5rem;
+    margin-block-end: 6rem;
+    margin: 4em auto 5em;
   }
 }
 
